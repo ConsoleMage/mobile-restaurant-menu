@@ -1,34 +1,40 @@
 import { menuArray } from "./data.js";
 
+let ordersHtml = ``;
+let ordersArray = [];
+
 document.addEventListener('click', function (e) {
     if (e.target.closest('.add-btn')) {
         const itemId = e.target.closest('.add-btn').dataset.id;
         if (itemId) {
             handleAddItem(Number(itemId));
         }
-    } else if (e.target.closest(".remove-btn")) {
-        console.log("remove btn clicked");
-        const targetDiv = e.target.closest(".remove-btn").dataset.remove;
-        if (targetDiv) {
-            targetDiv.remove();
+    } else if (e.target.closest('.remove-btn')) {
+        const index = e.target.closest('.remove-btn').dataset.index;
+        if (index) {
+            ordersArray.splice(index, 1);
         }
+        render();
     }
 });
 
-let ordersHtml = ``;
-let orders = "";
-
 function handleAddItem(itemId) {
+    let orders = "";
     let hidden = "";
+
     const targetItemObj = menuArray.filter(menuItem => menuItem.id === itemId)[0];
 
-    orders += `
-        <div class="orders-list">
-            <div class="item-title">${targetItemObj.name}</div>
-            <div class="remove-btn data-remove">remove</div> 
-            <div class="order-price">$${targetItemObj.price}</div>
-        </div>
-    `;
+    ordersArray.unshift(targetItemObj);
+    ordersArray.forEach((order, index) => {
+        orders += `
+            <div class="orders-list">
+                <div class="item-title">${order.name}</div>
+                <div class="remove-btn" data-index="${index}">remove</div>
+                <div class="order-price">$${order.price}</div>
+            </div>
+        `;
+    });
+    
 
     ordersHtml = `
     <section class="${hidden} checkout">
@@ -41,10 +47,11 @@ function handleAddItem(itemId) {
     render();
 }
 
+
 function getOrderHtml() {
     let menuHtml = ``;
 
-    menuArray.forEach(function (menuItem) {
+    menuArray.forEach(menuItem => 
         menuHtml += `
         <section class="item">
             <div class="item-graphic">${menuItem.emoji}</div>
@@ -58,8 +65,8 @@ function getOrderHtml() {
             </div>
         </section>
         <hr>
-        `;
-    });
+        `
+    );
 
     console.log(ordersHtml);
     menuHtml += ordersHtml;
