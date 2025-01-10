@@ -64,7 +64,7 @@ p {
     text-align: center;
 }
 
-.container {
+.item-container {
     margin-left: calc(147px - 70px - 46px);
     text-align: left;
     font-weight: 400;
@@ -122,6 +122,59 @@ hr {
     border: 1px solid #D2D2D2;
 }
 
+/* Checkout Section */
+
+.checkout {
+    margin: auto;
+    width: 508px;
+    height: 319px;
+}
+
+.checkout-title {
+    margin: 40px auto 0px;
+    width: 90px;
+    height: 17px;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-align: left;
+}
+
 .hidden {
     display: none;
+}
+
+/* Orders */
+
+.orders-list {
+    display: flex;
+}
+
+.remove-btn {
+    margin-top: 21px;
+    margin-left: 70px;
+    width: 77px;
+    height: 22px;
+    font-family: "Roboto", serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #BBBBBB;
+}
+
+.order-price {
+    margin-top: 20px;
+    margin-left: 290px;
+    width: 18px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.orders-divider {
+    margin-top: 34px;
+    width: 504px;
+    height: 0px;
+    border: 2px solid #393333;
 }
