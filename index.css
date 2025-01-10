@@ -1,3 +1,127 @@
 body {
     margin: 0;
-} 
+    font-family: "Smythe", serif;
+    color: #000000;
+
+}
+
+header {
+    margin-top: 30px;
+    color: #FFFFFF;
+}
+
+.banner {
+    margin: auto;
+    width: 600px;
+    height: 167px;
+    background-image: url("images/acaeaea44c5e3a8cd7159c5d52f26662.jpg");
+}
+
+h1, p {
+    margin: 0;
+    position: relative;
+    font-weight: 400;
+    left: 46.07px;
+}
+
+h1 {
+    width: 169.28px;
+    height: 24px;
+    top: 46px;
+    font-size: 39px;
+    line-height: 24px;
+    text-align: center;
+}
+
+p {
+    width: 275.46px;
+    height: 8px;
+    top: 89px;
+    font-size: 22.42px;
+    line-height: 13.8px;
+    text-align: left;
+}
+
+.item {
+    display: flex;
+    margin: 30px auto 0px;
+    width: 508px;
+    height: 140px;
+}
+
+.item:first-of-type {
+    margin-top: calc(234px - 167px);
+}
+
+.item-graphic {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", serif;
+    font-size: 78.72px;
+    font-weight: 400;
+    line-height: 98.4px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.container {
+    margin-left: calc(147px - 70px - 46px);
+    text-align: left;
+    font-weight: 400;
+    padding: 0;
+}
+
+.item-title {
+    margin-top: calc(241.2px - 218px);
+    width: 43px;
+    height: 17px;
+    font-size: 28px;
+    line-height: 16.8px;
+}
+
+.item-description {
+    color: #8B8B8B;
+    width: 300px;
+    height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.item-price {
+    width: 18px;
+    height: 24px;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.add-btn {
+    display: flex;
+    margin-top: calc(241.2px - 218px);
+    width: 50px;
+    height: 50px;
+    color: #3C3C3C;
+    border: 1.5px solid #DEDEDE;
+    border-radius: 50%;
+}
+
+.plus {
+    margin: auto;
+    width: 27px;
+    height: 28.5px;
+    font-family: "Inter", serif;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 24px;
+    text-align: center;
+}
+
+hr { 
+    margin-top: 0px;
+    width: 504px;
+    height: 0px;
+    border: 1px solid #D2D2D2;
+}
+
+.hidden {
+    display: none;
+}
