@@ -2,7 +2,7 @@ import { menuArray } from "./data.js";
 
 let ordersHtml = ``;
 let ordersArray = [];
-
+let hidden = "";
 
 document.addEventListener('click', function (e) {
     if (e.target.closest('.add-btn')) {
@@ -18,74 +18,27 @@ document.addEventListener('click', function (e) {
     }
 });
 
-// Remove items here, remove items based on their index in ordersArray
+// Add / Remove only handles shifting, unshifting elements to ordersArray
 
 function handleRemoveItem(index) {
-
-    let orders = "";
-    let hidden = "";
-
     const targetItemObj = ordersArray.filter(order => order.id === index)[0];
     ordersArray.shift(targetItemObj);
-    
-    ordersArray.forEach((order, index) => {
-        orders += `
-            <div class="orders-list">
-                <div class="item-title">${order.name}</div>
-                <div class="remove-btn" data-index="${index}">remove</div>
-                <div class="order-price">$${order.price}</div>
-            </div>
-        `;
-    });
-    
-    ordersHtml = `
-    <section class="${hidden} checkout">
-        <div class="checkout-title">Your order</div>
-            ${orders}
-        <hr class="orders-divider">
-    </section>
-    `;
-
     render();
-
 }
-
-// Add items to order here, render() is called last
 
 function handleAddItem(itemId) {
-    let orders = "";
-    let hidden = "";
-
     const targetItemObj = menuArray.filter(menuItem => menuItem.id === itemId)[0];
-
     ordersArray.unshift(targetItemObj);
-    ordersArray.forEach((order, index) => {
-        orders += `
-            <div class="orders-list">
-                <div class="item-title">${order.name}</div>
-                <div class="remove-btn" data-index="${index}">remove</div>
-                <div class="order-price">$${order.price}</div>
-            </div>
-        `;
-    });
-
-    ordersHtml = `
-    <section class="${hidden} checkout">
-        <div class="checkout-title">Your order</div>
-            ${orders}
-        <hr class="orders-divider">
-    </section>
-    `;
-
     render();
 }
 
-// Render the menu here, call orders before finally rendering
+// getOrderHtml has 3 parts, the base menu, the order list, then the orders themselves
 
 function getOrderHtml() {
     let menuHtml = ``;
+    let orders = "";
 
-    menuArray.forEach(menuItem => 
+    menuArray.forEach(menuItem =>
         menuHtml += `
         <section class="item">
             <div class="item-graphic">${menuItem.emoji}</div>
@@ -102,11 +55,29 @@ function getOrderHtml() {
         `
     );
 
-    console.log(ordersHtml);
-    menuHtml += ordersHtml;
+    ordersArray.forEach((order, index) => {
+        orders += `
+            <div class="orders-list">
+                <div class="item-title">${order.name}</div>
+                <div class="remove-btn" data-index="${index}">remove</div>
+                <div class="order-price">$${order.price}</div>
+            </div>
+        `;
+    });
 
+    ordersHtml = `
+    <section class="${hidden} checkout">
+        <div class="checkout-title">Your order</div>
+            ${orders}
+        <hr class="orders-divider">
+    </section>
+    `;
+
+    menuHtml += ordersHtml;
     return menuHtml;
 }
+
+// Render function is called here
 
 function render() {
     document.getElementById("main").innerHTML = getOrderHtml();
