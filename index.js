@@ -70,6 +70,11 @@ function getOrderHtml() {
         <div class="checkout-title">Your order</div>
             ${orders}
         <hr class="orders-divider">
+        <div class="orders-container">
+            <div class="total-price">Total price:</div>
+            <div class="total-order-price">$12</div>
+        </div>
+        <button class="order-button">Complete order</button>
     </section>
     `;
 
