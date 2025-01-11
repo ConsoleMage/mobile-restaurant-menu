@@ -1,8 +1,7 @@
 import { menuArray } from "./data.js";
 
-let ordersHtml = ``;
 let ordersArray = [];
-let hidden = "";
+let hidden = "hidden";
 
 document.addEventListener('click', function (e) {
     if (e.target.closest('.add-btn')) {
@@ -27,6 +26,7 @@ function handleRemoveItem(index) {
 }
 
 function handleAddItem(itemId) {
+    hidden = "";
     const targetItemObj = menuArray.filter(menuItem => menuItem.id === itemId)[0];
     ordersArray.unshift(targetItemObj);
     render();
@@ -35,7 +35,7 @@ function handleAddItem(itemId) {
 // getOrderHtml has 3 parts, the base menu, the order list, then the orders themselves
 
 function getOrderHtml() {
-    let menuHtml = ``;
+    let menuHtml = "";
     let orders = "";
 
     menuArray.forEach(menuItem =>
@@ -65,7 +65,7 @@ function getOrderHtml() {
         `;
     });
 
-    ordersHtml = `
+    const ordersHtml = `
     <section class="${hidden} checkout">
         <div class="checkout-title">Your order</div>
             ${orders}
