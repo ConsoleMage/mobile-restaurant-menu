@@ -38,6 +38,7 @@ function handleAddItem(itemId) {
 function getOrderHtml() {
     let menuHtml = "";
     let orders = "";
+    let totalPrice = 0;
 
     menuArray.forEach(menuItem =>
         menuHtml += `
@@ -64,6 +65,7 @@ function getOrderHtml() {
                 <div class="order-price">$${order.price}</div>
             </div>
         `;
+        totalPrice += order.price;
     });
 
     let ordersHtml = `
@@ -73,7 +75,7 @@ function getOrderHtml() {
         <hr class="orders-divider">
         <div class="orders-container">
             <div class="total-price">Total price:</div>
-            <div class="total-order-price">$12</div>
+            <div class="total-order-price">$${totalPrice}</div>
         </div>
         <button class="order-button" type="button">Complete order</button>
     </section>
