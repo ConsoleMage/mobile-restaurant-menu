@@ -66,7 +66,7 @@ function getOrderHtml() {
         `;
     });
 
-    const ordersHtml = `
+    let ordersHtml = `
     <section class="${hidden} checkout">
         <div class="checkout-title">Your order</div>
             ${orders}
@@ -75,9 +75,13 @@ function getOrderHtml() {
             <div class="total-price">Total price:</div>
             <div class="total-order-price">$12</div>
         </div>
-        <button class="order-button">Complete order</button>
+        <button class="order-button" type="button">Complete order</button>
     </section>
     `;
+
+    if (ordersArray.length === 0) {
+        ordersHtml = "";
+    }
 
     menuHtml += ordersHtml;
     return menuHtml;
@@ -87,10 +91,20 @@ function getOrderHtml() {
 
 function render() {
     document.getElementById("main").innerHTML = getOrderHtml();
-    document.querySelector(".order-button").addEventListener("click", function(e) {
-        // Your event handler code here
+
+    document.querySelector(".order-button").addEventListener("click", function() {
+        document.querySelector(".modal-container").classList.remove("hidden");
         console.log("Order button clicked!");
-      });
+    });
+    
+    document.querySelector(".pay-button").addEventListener("click", function() {
+        document.querySelector(".order-details").classList.remove("hidden");
+        document.querySelector(".modal-container").classList.add("hidden");
+        document.querySelector(".orders-container").classList.add("hidden");
+        ordersArray = []; // Clear the orders array
+        render(); // Re-render to update the UI
+        console.log("Pay button clicked!");
+    });
 }
 
 render();
