@@ -5,7 +5,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 body, html {
-    border: 2px solid red;
     margin: 0;
     padding: 0;
     font-family: "Smythe", serif;
@@ -286,7 +285,6 @@ input {
 }
 
 .order-details {
-    border: 2px solid red;
     margin: 60px auto 0px;
     width: 504px;
     height: 120px;
@@ -299,7 +297,6 @@ input {
 
 .order-text {
     text-align: center;
-    border: 2px solid red;
     width: auto; 
     height: auto; 
     font-size: 32px;
