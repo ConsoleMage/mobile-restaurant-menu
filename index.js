@@ -17,6 +17,7 @@ document.addEventListener('click', function (e) {
     }
 });
 
+
 // Add / Remove only handles shifting, unshifting elements to ordersArray
 
 function handleRemoveItem(index) {
@@ -86,6 +87,10 @@ function getOrderHtml() {
 
 function render() {
     document.getElementById("main").innerHTML = getOrderHtml();
+    document.querySelector(".order-button").addEventListener("click", function(e) {
+        // Your event handler code here
+        console.log("Order button clicked!");
+      });
 }
 
 render();

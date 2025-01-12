@@ -1,9 +1,18 @@
-  /* For devices with a width between 601px and 1024px */
-  @media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
     .container {
-      width: 80%; /* Adjust as needed */
+        width: 100%;
     }
-  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 
 body {
     margin: 0;
@@ -12,21 +21,19 @@ body {
     min-width: 600px;
 }
 
-/* Main Menu */
+.hidden {
+    display: none !important;
+  }
+
+/* 1. Semantic HTML */
 
 header {
     margin-top: 30px;
     color: #FFFFFF;
 }
 
-.banner {
-    margin: auto;
-    width: 600px;
-    height: 167px;
-    background-image: url("images/acaeaea44c5e3a8cd7159c5d52f26662.jpg");
-}
-
-h1, p {
+h1,
+p {
     margin: 0;
     position: relative;
     font-weight: 400;
@@ -51,12 +58,27 @@ p {
     text-align: left;
 }
 
+hr {
+    margin-top: 0px;
+    width: 504px;
+    height: 0px;
+    border: 1px solid #D2D2D2;
+}
+
+.banner {
+    margin: auto;
+    width: 600px;
+    height: 167px;
+    background-image: url("images/acaeaea44c5e3a8cd7159c5d52f26662.jpg");
+}
+
+/* 2. Items, Checkout, Orders */
+
 .item {
     display: flex;
     margin: 30px auto 0px;
     width: 508px;
     height: 140px;
-    
 }
 
 .item:first-of-type {
@@ -75,7 +97,7 @@ p {
 }
 
 .item-container {
-    
+
     margin-left: calc(147px - 70px - 46px);
     text-align: left;
     font-weight: 400;
@@ -105,36 +127,6 @@ p {
     line-height: 24px;
 }
 
-.add-btn {
-    display: flex;
-    margin-top: calc(241.2px - 218px);
-    width: 50px;
-    height: 50px;
-    color: #3C3C3C;
-    border: 1.5px solid #DEDEDE;
-    border-radius: 50%;
-}
-
-.plus {
-    margin: auto;
-    width: 27px;
-    height: 28.5px;
-    font-family: "Inter", serif;
-    font-size: 32px;
-    font-weight: 200;
-    line-height: 24px;
-    text-align: center;
-}
-
-hr { 
-    margin-top: 0px;
-    width: 504px;
-    height: 0px;
-    border: 1px solid #D2D2D2;
-}
-
-/* Checkout Section */
-
 .checkout {
     margin: auto;
     width: 508px;
@@ -151,27 +143,8 @@ hr {
     text-align: left;
 }
 
-.hidden {
-    display: none;
-}
-
-/* Orders inside Checkout */
-
 .orders-list {
     display: flex;
-}
-
-.remove-btn {
-    margin-top: 21px;
-    margin-left: 70px;
-    width: 77px;
-    height: 22px;
-    font-family: "Roboto", serif;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-    color: #BBBBBB;
 }
 
 .order-price {
@@ -193,7 +166,6 @@ hr {
 .orders-container {
     display: flex;
     margin-top: 20px;
-    
 }
 
 .total-price {
@@ -203,7 +175,6 @@ hr {
     font-size: 28px;
     font-weight: 400;
     line-height: 24px;
-    
 }
 
 .total-order-price {
@@ -214,7 +185,42 @@ hr {
     line-height: 24px;
 }
 
-/* Order button */
+
+/* 4. Buttons */
+
+.add-btn {
+    display: flex;
+    margin-top: calc(241.2px - 218px);
+    width: 50px;
+    height: 50px;
+    color: #3C3C3C;
+    border: 1.5px solid #DEDEDE;
+    border-radius: 50%;
+}
+
+.plus {
+    margin: auto;
+    width: 27px;
+    height: 28.5px;
+    font-family: "Inter", serif;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 24px;
+    text-align: center;
+}
+
+.remove-btn {
+    margin-top: 21px;
+    margin-left: 70px;
+    width: 77px;
+    height: 22px;
+    font-family: "Roboto", serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #BBBBBB;
+}
 
 [class*="-button"] {
     background: #16DB99;
@@ -232,7 +238,8 @@ hr {
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-    }
+    box-shadow: 0px 1px 2px 0px #0000000D;
+}
 
 .pay-button {
     width: 475.91px;
@@ -243,7 +250,7 @@ hr {
     line-height: 31.12px;
 }
 
-/* Payment Form */
+/* 5. Form */
 
 .modal-container {
     display: flex;
@@ -254,6 +261,17 @@ hr {
     height: 542.24px;
     border-radius: 3.89px;
     box-shadow: 5.19px 5.19px 255.44px 0px #00000080;
+}
+
+.modal-title {
+    margin: 0px auto 40px;
+    text-align: center;
+    width: 304.37px;
+    height: 40.92px;
+    font-family: "Roboto", serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31.12px;
 }
 
 input {
@@ -268,16 +286,4 @@ input {
     font-weight: 400;
     line-height: 31.12px;
     padding-left: 20px;
-}
-
-/* Hide the scroll for Chrome, Safari, Edge, and Opera */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Hide the scroll for Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
 }
