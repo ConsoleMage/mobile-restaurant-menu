@@ -14,7 +14,7 @@ body, html {
 
 .hidden {
     display: none !important;
-  }
+}
 
 /* 1. Semantic HTML */
 
@@ -88,7 +88,6 @@ hr {
 }
 
 .item-container {
-
     margin-left: calc(147px - 70px - 46px);
     text-align: left;
     font-weight: 400;
@@ -176,7 +175,6 @@ hr {
     line-height: 24px;
 }
 
-
 /* 4. Buttons */
 
 .add-btn {
@@ -258,7 +256,6 @@ hr {
     background-color: white;
 }
 
-
 .modal-title {
     margin: 0px auto 40px;
     text-align: center;
@@ -297,8 +294,8 @@ input {
 
 .order-text {
     text-align: center;
-    width: auto; 
-    height: auto; 
+    width: auto;
+    height: auto;
     font-size: 32px;
     font-weight: 400;
     line-height: 16.8px;

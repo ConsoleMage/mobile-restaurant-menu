@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.69">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mobile Restaurant Menu</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,15 @@
     <main id="main">
     </main>
     <div class="hidden modal-container">
-    <form id="payment-modal">
-        <div class="modal-title">Enter card details</div>
-        <input type="text" id="name-input" name="name-input" placeholder="Enter your name"><br><br>
-        <input type="number" id="card-number-input" name="card-number-input" placeholder="Enter card number"><br><br>
-        <input type="number" id="CVV-input" name="CVV-input" placeholder="Enter CVV"><br><br>
-        <button class="pay-button" type="button">Pay</button>
-    </form>
+        <form id="payment-modal">
+            <div class="modal-title">Enter card details</div>
+            <input type="text" id="name-input" name="name-input" placeholder="Enter your name"><br><br>
+            <input type="number" id="card-number-input" name="card-number-input" placeholder="Enter card number"><br><br>
+            <input type="number" id="CVV-input" name="CVV-input" placeholder="Enter CVV"><br><br>
+            <button class="pay-button" type="button">Pay</button>
+        </form>
     </div>
-    <div class="order-details">
+    <div class="hidden order-details">
         <div class="order-text">Thanks, James! Your order is on its way!</div>
     </div>
     <script src="index.js" type="module"></script>

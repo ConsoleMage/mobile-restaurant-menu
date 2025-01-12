@@ -17,7 +17,6 @@ document.addEventListener('click', function (e) {
     }
 });
 
-
 // Add / Remove only handles shifting, unshifting elements to ordersArray
 
 function handleRemoveItem(index) {
