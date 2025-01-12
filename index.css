@@ -3,6 +3,12 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+@media only screen and (max-width: 600px) {
+    body {
+        transform: scale(0.72); /* Scale down to 80% */
+        transform-origin: top left; /* Set the origin point for scaling */
+    }
+}
 
 body, html {
     margin: 0;
