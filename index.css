@@ -1,9 +1,3 @@
-@media only screen and (max-width: 600px) {
-    body, html {
-      width: 100%;
-    }
-  }
-
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -13,11 +7,8 @@ input[type="number"]::-webkit-inner-spin-button {
 body, html {
     margin: 0;
     padding: 0;
-    min-width: 600px;
     font-family: "Smythe", serif;
     color: #000000;
-    transform: scale(0.835); 
-    transform-origin: top left; 
 }
 
 .hidden {
