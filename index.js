@@ -3,17 +3,17 @@ import { menuArray } from "./data.js";
 let ordersArray = [];
 let hidden = "hidden";
 
-document.addEventListener('click', function (e) {
-    if (e.target.closest('.add-btn')) {
-        const itemId = e.target.closest('.add-btn').dataset.id;
+document.addEventListener("click", function (e) {
+    if (e.target.closest(".add-btn")) {
+        const itemId = e.target.closest(".add-btn").dataset.id;
         if (itemId) {
             handleAddItem(Number(itemId));
         }
         if (ordersArray.length === 1) {
             document.querySelector(".order-details").classList.add("hidden");
         }
-    } else if (e.target.closest('.remove-btn')) {
-        const index = e.target.closest('.remove-btn').dataset.index;
+    } else if (e.target.closest(".remove-btn")) {
+        const index = e.target.closest(".remove-btn").dataset.index;
         if (index) {
             handleRemoveItem(Number(index));
         }
