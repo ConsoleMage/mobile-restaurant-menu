@@ -9,7 +9,7 @@ document.addEventListener('click', function (e) {
         if (itemId) {
             handleAddItem(Number(itemId));
         }
-        if (ordersArray.length === 0) {
+        if (ordersArray.length === 1) {
             document.querySelector(".order-details").classList.add("hidden");
         }
     } else if (e.target.closest('.remove-btn')) {
