@@ -10,7 +10,7 @@ document.addEventListener('click', function (e) {
             handleAddItem(Number(itemId));
         }
         if (ordersArray.length === 0) {
-            document.querySelector(".order-details").classList.remove("hidden");
+            document.querySelector(".order-details").classList.add("hidden");
         }
     } else if (e.target.closest('.remove-btn')) {
         const index = e.target.closest('.remove-btn').dataset.index;
