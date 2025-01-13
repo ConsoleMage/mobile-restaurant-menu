@@ -9,6 +9,9 @@ document.addEventListener('click', function (e) {
         if (itemId) {
             handleAddItem(Number(itemId));
         }
+        if (ordersArray.length === 0) {
+            document.querySelector(".order-details").classList.remove("hidden");
+        }
     } else if (e.target.closest('.remove-btn')) {
         const index = e.target.closest('.remove-btn').dataset.index;
         if (index) {
@@ -17,7 +20,7 @@ document.addEventListener('click', function (e) {
     }
 });
 
-// Add / Remove only handles shifting, unshifting elements to ordersArray
+// To handle any interaction with the UI
 
 function handleRemoveItem(index) {
     const targetItemObj = ordersArray.filter(order => order.id === index)[0];
@@ -32,7 +35,7 @@ function handleAddItem(itemId) {
     render();
 }
 
-// getOrderHtml has 3 parts, the base menu, the order list, then the orders themselves
+// getOrderHtml has 3 parts, the base menu, the orders list, the orders
 
 function getOrderHtml() {
     let menuHtml = "";
@@ -88,23 +91,22 @@ function getOrderHtml() {
     return menuHtml;
 }
 
-// Render function is called here
+// Render handles the HTML for Orders as well as the modal, payment details, order details
 
 function render() {
     document.getElementById("main").innerHTML = getOrderHtml();
 
-    document.querySelector(".order-button").addEventListener("click", function() {
+    document.querySelector(".order-button").addEventListener("click", function () {
         document.querySelector(".modal-container").classList.remove("hidden");
-        console.log("Order button clicked!");
     });
-    
-    document.querySelector(".pay-button").addEventListener("click", function() {
-        document.querySelector(".order-details").classList.remove("hidden");
+
+    document.querySelector(".pay-button").addEventListener("click", function () {
         document.querySelector(".modal-container").classList.add("hidden");
         document.querySelector(".orders-container").classList.add("hidden");
-        ordersArray = []; // Clear the orders array
-        render(); // Re-render to update the UI
-        console.log("Pay button clicked!");
+        document.querySelector(".order-details").classList.remove("hidden");
+
+        ordersArray = [];
+        render();
     });
 }
 
